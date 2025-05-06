@@ -35,7 +35,7 @@ our_fav_numbers=my_fav_numbers | friend_fav_numbers
 print(our_fav_numbers)
 
 #exercise 6
-
+#its not possible to add more integers directly to an existing tuple
 #exercise 7
 basket=["Banana", "Apples", "Oranges", "Blueberries"]
 basket.remove("Banana")
