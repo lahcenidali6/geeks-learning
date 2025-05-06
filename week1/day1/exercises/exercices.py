@@ -49,10 +49,11 @@ print(basket)
 
 #exercise 8
 sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
-
-for order in sandwich_orders:
-    if order =="Pastrami sandwich":
-        sandwich_orders.remove(order)
+i=0
+while  i < len(sandwich_orders):
+    if sandwich_orders[i] =="Pastrami sandwich":
+        sandwich_orders.pop(i)
+    i+=1
 
 finished_sandwiches=[]
 while sandwich_orders:
