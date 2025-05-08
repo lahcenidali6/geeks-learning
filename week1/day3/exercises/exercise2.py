@@ -9,12 +9,12 @@ class Dog:
 
 davids_dog=Dog("Rex",50)
 print(f"the dog name is {davids_dog.name} and his height is {davids_dog.height}cm")
-davids_dog.bark
-davids_dog.jump
+davids_dog.bark()
+davids_dog.jump()
 sarahs_dog=Dog("Teacup",20)
 print(f"the dog name is {sarahs_dog.name} and his height is {sarahs_dog.height}cm")
-sarahs_dog.bark
-sarahs_dog.jump
+sarahs_dog.bark()
+sarahs_dog.jump()
 
 if davids_dog.height>sarahs_dog.height:
     print(f"the bigger dog is {davids_dog.name}")
