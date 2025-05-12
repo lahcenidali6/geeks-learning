@@ -14,8 +14,8 @@ class Pagination:
         end = start + self.page_size
         return self.list_items[start:end]
     def go_to_page(self , page_num):
-        if 0>=page_num > (self.total_num_pages):
-            print("ValueError")
+        if page_num > (self.total_num_pages) and page_num > 0:
+            raise ValueError("invalid page number")
         else:
             self.current_idx=page_num-1
     def first_page(self):
@@ -51,9 +51,6 @@ print(p.get_visible_items())
 p.go_to_page(10)
 
 print(p.current_idx + 1)
-
-p.go_to_page(0)
-
         
 
 
