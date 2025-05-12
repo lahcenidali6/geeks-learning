@@ -1,4 +1,3 @@
-from collections import defaultdict
 class Zoo:
     def __init__(self,zoo_name):
         self.name=zoo_name
@@ -17,9 +16,10 @@ class Zoo:
         self.animals.append(animal_sold)
     
     def sort_animals(self):
-        list_animals_grouped = defaultdict(list)
+        list_animals_grouped = {}
+        self.animals.sort()
         for animal in self.animals:
-            list_animals_grouped[animal.name[0]].append(animal)
+            list_animals_grouped[animal[0]].append(animal)
         self.animals.clear()
         self.animals=list_animals_grouped
     def get_groups(self):
@@ -28,9 +28,9 @@ class Zoo:
             for animal in group :
                 print(animal)
 new_york_zoo=Zoo("new_york_zoo")
-new_york_zoo.add_animal(animal1)
+new_york_zoo.add_animal("animal1")
 new_york_zoo.get_animals()
-new_york_zoo.sell_animal(animal1)
+new_york_zoo.sell_animal("animal1")
 new_york_zoo.sort_animals()
 
 

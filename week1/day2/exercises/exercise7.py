@@ -15,8 +15,6 @@ def get_random_temp(month):
         return round(random.uniform(16,25),2)
     elif season=="summer":
         return round(random.uniform(25,40),2)
-    
-
 
 def main():
     month=int(input ("enter the month  1 -> 12 : "))
@@ -31,7 +29,7 @@ def main():
     elif random_tem>=23 and random_tem<32 :
         print("so hot! what about the beach")
     else :
-        print("you have to get yourself in freezer")
+        print("you have to get yourself in the freezer")
 
    
 main()
