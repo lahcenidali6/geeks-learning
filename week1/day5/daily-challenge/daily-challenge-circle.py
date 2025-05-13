@@ -1,4 +1,5 @@
 import math
+import turtle 
 
 class Circle:
     def __init__(self, radius=None, diameter=None):
@@ -45,4 +46,23 @@ class Circle:
 
     def __ge__(self, other):
         return self > other or self == other
+    
 
+circle1=Circle(30)
+circle2=Circle(50)
+circle3=Circle(10)
+circle4=Circle(5)
+circles_list=[circle1,circle2,circle3,circle4]
+circles_list.sort()
+
+y=0
+for circle in circles_list:
+    y+=circle.diameter
+    turtle.speed(10)
+    turtle.hideturtle()
+    turtle.penup()
+    turtle.goto(0, y - circle.radius)  
+    turtle.pendown()
+    turtle.circle(circle.radius)
+    
+turtle.done()
