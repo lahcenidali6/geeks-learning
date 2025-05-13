@@ -3,11 +3,12 @@ class Family:
         self.memebers=[]
         self.last_name=str(last_name)
     def born(self,**kwargs):
-        if kwargs["age"]>18:
-            kwargs["is_child"]=False
-        else :
-            kwargs["is_child"]=True
         if kwargs not in self.memebers:
+            if kwargs["age"]>18:
+                kwargs["is_child"]=False
+            else :
+                kwargs["is_child"]=True
+
             self.memebers.append(kwargs)
             print("welcome on the family")
         else:
@@ -23,6 +24,7 @@ class Family:
                 print("the memebers isn't exist in family")
 
     def family_presentation(self):
+        print(f"Family name : {self.last_name} \nmemebers of the family : ")
         for memeber in self.memebers:
             print(f"name : {memeber["name"]} , age : {memeber["age"]} , gender : {memeber["gender"]} , is_child : {memeber["is_child"]}")
         
