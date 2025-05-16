@@ -22,21 +22,27 @@ cursor=connection.cursor()
 class MenuManager:
     @classmethod
     def get_by_name(cls, name):
-        query=f"select * from Menu_Items where item_name='{name}'"
-        cursor.execute(query)
-        item=cursor.fetchone()
-        if item:
-            return item
-        else :
-            return None
-        
+        try:
+            query=f"select * from Menu_Items where item_name='{name}'"
+            cursor.execute(query)
+            item=cursor.fetchone()
+            if item:
+                return item
+            else :
+                return None
+        except Exception as e:
+            print(f"error {e}")
+            
     @classmethod
     def all_items(cls):
-        query=f"select * from Menu_Items"
-        cursor.execute(query)
-        rows = cursor.fetchall()
-        items=[]                    
-        for row in rows :
-            items.append({"item_name": row[1], "item_price": row[2]})
-        return items
+        try:
+            query=f"select * from Menu_Items"
+            cursor.execute(query)
+            rows = cursor.fetchall()
+            items=[]                    
+            for row in rows :
+                items.append({"item_name": row[1], "item_price": row[2]})
+            return items
+        except Exception as e:
+            print(f"error {e}")
 

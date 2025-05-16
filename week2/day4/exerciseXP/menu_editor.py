@@ -7,8 +7,14 @@ def View_an_Item():
     if item:
         print(f"item name: {item[1]} and the price: {item[2]}$")
     else:
-        print(f"{name} isn't exist in the menu ")
-    
+        choice = str(input(f"{name} isn't exist in the menu\nDid you want to add it (Y/N): ")).upper()
+        if choice=="Y" :
+            add_item_to_menu()
+        elif choice=="N":
+            pass
+        else:
+            print("The choice not exist ! \n")
+            
 def add_item_to_menu():
     name=str(input("Type the name of item: "))
     price = int(input("Type the price of item: "))
@@ -37,7 +43,7 @@ def show_restaurant_menu():
         
 
 def show_user_menu():
-    choice=str(input("View an Item (V)\nAdd an Item (A)\nDelete an Item (D)\nUpdate an Item (U)\nShow the Menu (S)\n: ")).upper()
+    choice=str(input("View an Item (V)\nAdd an Item (A)\nDelete an Item (D)\nUpdate an Item (U)\nShow the Menu (S)\nExit(E): ")).upper()
     if choice=="V":
         View_an_Item()
         show_user_menu()
@@ -53,6 +59,11 @@ def show_user_menu():
     elif  choice=="S":
         show_restaurant_menu()
         show_user_menu()
-    
+    elif  choice=="E":
+        print("Good By :)")
+    else:
+        print("The choice not exist ! \n")
+        show_user_menu()
+        
 show_user_menu()
 
