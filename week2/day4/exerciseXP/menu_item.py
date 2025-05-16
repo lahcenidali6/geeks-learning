@@ -25,20 +25,32 @@ class MenuItem:
         self.price=price
         
     def save(self):
-        query=f'''insert into Menu_Items(item_name,item_price) 
-        values ('{self.name}',{self.price})'''
-        cursor.execute(query)
-        connection.commit()
+        try:
+            query=f'''insert into Menu_Items(item_name,item_price) 
+            values ('{self.name}',{self.price})'''
+            cursor.execute(query)
+            connection.commit()
+            return (f"{self.name} item has been added with success :)")
+        except Exception as e:
+            return (f"error {e}")
+        
         
     def delete(self):
-        query=f'''delete from Menu_Items where item_name=%s'''
-        cursor.execute(query,(self.name,))
-        connection.commit()
+        try:
+            query=f'''delete from Menu_Items where item_name=%s'''
+            cursor.execute(query,(self.name,))
+            connection.commit()
+            return(f"{self.name} item has been deleted with success !")
+        except Exception as e:
+            return (f"error {e}")
         
     def update(self ,new_name,new_price):
-        query=f"update Menu_Items set item_name='{new_name}',item_price={new_price} where item_name='{self.name}'"
-        cursor.execute(query)
-        connection.commit()
-        self.name=new_name
-        self.price=new_price
- 
+        try:
+            query=f"update Menu_Items set item_name='{new_name}',item_price={new_price} where item_name='{self.name}'"
+            cursor.execute(query)
+            connection.commit()
+            self.name=new_name
+            self.price=new_price
+            return (f"{self.name} item has been updated with success !")
+        except Exception as e:
+            return (f"error {e}")

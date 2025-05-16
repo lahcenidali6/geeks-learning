@@ -13,22 +13,22 @@ def add_item_to_menu():
     name=str(input("Type the name of item: "))
     price = int(input("Type the price of item: "))
     item = MenuItem(name,price)
-    item.save()
-    print("The item has been added :)")
+    message = item.save()
+    print(message)
 
 def remove_item_from_menu():
     name=str(input("type the name for item you will delete it: "))
     item=MenuItem(name,10)
-    item.delete()
-    print(f"Item {name} deleted successfully.")
+    message = item.delete()
+    print(message)
 
 def update_item_from_menu():
     name=str(input("Type the name of item you will update it: "))
     item = MenuItem(name,0)
     new_name=str(input("Type the new name of item: "))
     new_price = int(input("the price: "))
-    item.update(new_name,new_price)
-    print("The iteem has been updated")
+    message= item.update(new_name,new_price)
+    print(message)
 
 def show_restaurant_menu():
     items=MenuManager.all_items()
@@ -37,17 +37,22 @@ def show_restaurant_menu():
         
 
 def show_user_menu():
-    choice=str(input("View an Item (V)\nAdd an Item (A)\nDelete an Item (D)\nUpdate an Item (U)\nShow the Menu (S)\n:")).upper()
+    choice=str(input("View an Item (V)\nAdd an Item (A)\nDelete an Item (D)\nUpdate an Item (U)\nShow the Menu (S)\n: ")).upper()
     if choice=="V":
         View_an_Item()
+        show_user_menu()
     elif  choice=="A":
         add_item_to_menu()
+        show_user_menu()
     elif  choice=="D":
         remove_item_from_menu()
+        show_user_menu()
     elif  choice=="U":
         update_item_from_menu()
+        show_user_menu()
     elif  choice=="S":
         show_restaurant_menu()
+        show_user_menu()
     
 show_user_menu()
 
