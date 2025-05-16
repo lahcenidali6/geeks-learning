@@ -1,5 +1,5 @@
 import requests
-import js
+import json
 import  sqlite3
 import random
 
