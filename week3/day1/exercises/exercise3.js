@@ -1,9 +1,21 @@
 let input=0
 while(input<10){
-   input=prompt("Please enter a number:");
-    if (!isNaN(input)) {
-        
-    } else {
-    console.log("Invalid input: Not a input.");
+    check=prompt("Please enter a number:")
+    if(check==null){
+        break
     }
+    else {
+        if(typeof(check)=="string"){
+            if(isNaN(check)){
+                alert("invalid input")
+            }
+            else input=check
+        }
+        else {
+            alert("invalid input")
+        }
+    }
+   
 }
+
+
