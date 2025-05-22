@@ -5,7 +5,7 @@ class Family:
 
     def born(self, **kwargs):
         self.members.append(kwargs)
-        print(f"Congratulations! {kwargs['name']} is born into the {self.last_name} family.")
+        print(f"Congratulations! {kwargs['name']} is born into the {self.last_name} family :) ")
 
     def family_presentation(self):
         print(f"Family: {self.last_name}")
@@ -21,10 +21,10 @@ class TheIncredibles(Family):
                 else:
                     raise Exception(f"{name} is not over 18 years old and cannot use their power yet.")
                 return
-        print(f"No member named {name} found.")
+        print(f"{name} not found.")
 
     def incredible_presentation(self):
-        print("Here is our powerful family **")
+        print("Here is our powerful family ")
         super().family_presentation()
 
 incredible_family = TheIncredibles(
