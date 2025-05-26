@@ -4,10 +4,10 @@ let mousedown = false;
 let body = document.getElementsByTagName("body")[0];
 let color_blocks = document.querySelectorAll("#colors-bar > *");
 let squares = document.querySelectorAll("#squares > *");
-let clear_button = document.getElementsByTagName("button")[0];
+let button = document.getElementsByTagName("button")[0];
 let choice=document.getElementById('choice')
 
-clear_button.addEventListener("click", function(){
+button.addEventListener("click", function(){
     for (square of squares){
         square.style.backgroundColor = "white";
     }
