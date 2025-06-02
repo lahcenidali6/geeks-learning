@@ -1,8 +1,9 @@
-var sentence ="notbad"
-var wordNot=sentence.substring(0,3)
-var wordBad=sentence.substring(3,6)
+const sentence = 'The movie is not that bad, I like it';
+const wordNot = sentence.indexOf('not');
+const wordBad = sentence.indexOf('bad');
 
-if(sentence.substring(0,3)=="not" && sentence.substring(3,6)=="bad"){
-    sentence="good"
-}
-else console.log(sentence)
+const result = wordNot !== -1 && wordBad !== -1 && wordBad > wordNot
+  ? sentence.slice(0, wordNot) + 'good' + sentence.slice(wordBad + 3)
+  : sentence;
+
+console.log(result);
