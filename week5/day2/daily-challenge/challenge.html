@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gifs</title>
+    <style>
+         .gif-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gif-box {
+      position: relative;
+      display: inline-block;
+      border:1px solid balck;
+    }
+
+    .gif-box img {
+      max-width: 200px;
+      border-radius: 8px;
+      display: block;
+      max-height: 150px;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 8px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .delete-all{
+        position: relative;
+    }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="POST" id="form">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="cat" name="cat" required />
+        <button type="submit">Submit</button>
+    </form>
+    <div class="gif-container" id="gifContainer"></div>
+    <button id="deleteAll" class="delete-btn delete-all">DELETE ALL</button>
+  </body>
+  <script src="challenge.js"></script>
+</html>
