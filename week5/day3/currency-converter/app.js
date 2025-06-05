@@ -5,6 +5,28 @@ document.querySelector(".icon-btn").addEventListener("click", async (e)=>{
     const displayRes=document.querySelector(".result-box")
     displayRes.innerText=Number(amount)*Number(data.conversion_rate)
 })
+document.querySelector(".swap-btn").addEventListener("click", async () => {
+    const selects = document.querySelectorAll("select");
+    const fromSelect = selects[0];
+    const toSelect = selects[1];
+
+    // Swap the values
+    const temp = fromSelect.value;
+    fromSelect.value = toSelect.value;
+    toSelect.value = temp;
+
+    // Recalculate and display new result
+    const data = await getConvRate(fromSelect.value, toSelect.value);
+    const amount = document.querySelector("input").value;
+    const displayRes = document.querySelector(".result-box");
+
+    if (!isNaN(amount) && amount.trim() !== "") {
+        displayRes.innerText = (Number(amount) * Number(data.conversion_rate)).toFixed(2);
+    } else {
+        displayRes.innerText = "Invalid amount";
+    }
+});
+
 
 async function getConvRate(from , to) {
     try{
