@@ -64,7 +64,7 @@ document.querySelector("#next").addEventListener("click",async ()=>{
   renderPokemon(data)
 })
 document.querySelector("#prev").addEventListener("click",async ()=>{
-  currentId--
+  if(currentId>1) currentId--
   const data = await prevNextPokemon(currentId);
   renderPokemon(data)
 })
