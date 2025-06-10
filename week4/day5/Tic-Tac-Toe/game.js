@@ -3,14 +3,14 @@ let index = 0
 let board = Array(9).fill(null)
 let winner = false
 const winningCombos = [
-  [0, 1, 2], // Row 0
-  [3, 4, 5], // Row 1
-  [6, 7, 8], // Row 2
-  [0, 3, 6], // Col 0
-  [1, 4, 7], // Col 1
-  [2, 5, 8], // Col 2
-  [0, 4, 8], // Diagonal TL-BR
-  [2, 4, 6], // Diagonal TR-BL
+  [0, 1, 2], 
+  [3, 4, 5], 
+  [6, 7, 8], 
+  [0, 3, 6], 
+  [1, 4, 7], 
+  [2, 5, 8], 
+  [0, 4, 8], 
+  [2, 4, 6], 
 ]
 
 cells.forEach((cell, i) => {
@@ -75,15 +75,14 @@ function showWinnerLine(type, index) {
   const line = document.querySelector(".winning-line")
   const cellSize = 100
   const gap = 5
-  const offset = 40 // .game-container padding
 
-  // Reset any previous transform
+
   line.style.transform = ""
   line.style.top = ""
   line.style.left = ""
   line.style.width = ""
 
-  // Horizontal Win
+
   if (type === "row") {
     const top =
       (cellSize * index) / 2 + (cellSize * (index + 1)) / 2 + gap * index
@@ -94,7 +93,6 @@ function showWinnerLine(type, index) {
     line.style.transform = "rotate(0deg)"
   }
 
-  // Vertical Win
   else if (type === "col") {
     const left =
       (cellSize * index) / 2 + (cellSize * (index + 1)) / 2 + gap * index
@@ -104,7 +102,7 @@ function showWinnerLine(type, index) {
     line.style.transform = "rotate(90deg)"
   }
 
-  // Diagonal TL -> BR
+
   else if (type === "diag" && index === 0) {
     line.style.width = "424.2px"
     line.style.top = `0px`
@@ -112,7 +110,7 @@ function showWinnerLine(type, index) {
     line.style.transform = "rotate(45deg)"
   }
 
-  // Diagonal TR -> BL
+
   else if (type === "diag" && index === 1) {
     line.style.width = "424.4px"
     line.style.top = `0px`
