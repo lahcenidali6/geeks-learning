@@ -67,7 +67,7 @@ app.post("/api/answer", (req, res) => {
   res.json({isCorrect, score: leaderboard[idx]?.score });
 });
 
-// Leaderboard
+
 app.get("/api/leaderboard", (req, res) => {
   res.json(leaderboard);
 });

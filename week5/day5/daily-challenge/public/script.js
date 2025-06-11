@@ -32,9 +32,9 @@ async function handleGuess(guess) {
   const data = await res.json();
   const feedback = document.getElementById("feedback");
   if (data.isCorrect) {
-    feedback.textContent = "✅ Correct!";
+    feedback.textContent = "Correct!";
   } else {
-    feedback.textContent = `❌ Wrong! Answer was: ${currentCorrect}`;
+    feedback.textContent = `Wrong! Answer was: ${currentCorrect}`;
   }
 
   document.getElementById("score").textContent = data.score;
