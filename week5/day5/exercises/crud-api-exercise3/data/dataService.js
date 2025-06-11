@@ -2,15 +2,11 @@ import axios from "axios";
 
 async function fetchPosts() {
   try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    if (!res.ok) throw new Error("somthings went when fetching the data!");
-    else {
-      const data = await res.json();
-
-      return data;
-    }
+    const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    return response.data;
   } catch (err) {
-    console.log(`Error fetching posts: ${err}`);
+    console.log(`Error fetching posts: ${err.message}`);
   }
 }
-export default fetchPosts
+
+export default fetchPosts;
