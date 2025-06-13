@@ -1,4 +1,3 @@
-// server/routes/bookRoutes.js
 import express from 'express';
 import { getAll, getById, create } from '../controllers/bookController.js';
 

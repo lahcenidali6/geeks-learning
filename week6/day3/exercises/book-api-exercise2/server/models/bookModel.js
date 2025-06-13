@@ -1,4 +1,3 @@
-// server/models/bookModel.js
 import db from '../config/db.js';
 
 export const getAllBooks = () => db('books');

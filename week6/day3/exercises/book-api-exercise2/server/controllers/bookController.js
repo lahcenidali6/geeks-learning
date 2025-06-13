@@ -1,4 +1,4 @@
-// server/controllers/bookController.js
+
 import { getAllBooks, getBookById, createBook } from '../models/bookModel.js';
 
 export const getAll = async (req, res) => {
