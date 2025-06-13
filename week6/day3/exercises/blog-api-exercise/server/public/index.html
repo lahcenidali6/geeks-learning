@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Creative Posts App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>✨ Creative Posts Board</h1>
+      <form id="postForm">
+        <input
+          type="text"
+          id="title"
+          placeholder="Enter a catchy title..."
+          required
+        />
+        <textarea
+          id="content"
+          placeholder="Write something inspiring..."
+          rows="4"
+          required
+        ></textarea>
+        <button type="submit">🚀 Publish Post</button>
+      </form>
+      <div id="message" class="message"></div>
+      <div id="postsContainer"></div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
