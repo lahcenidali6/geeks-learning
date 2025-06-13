@@ -2,7 +2,6 @@ const form = document.getElementById('postForm');
 const postsContainer = document.getElementById('postsContainer');
 const messageDiv = document.getElementById('message');
 
-// Show message
 function showMessage(text, type = 'success') {
   messageDiv.textContent = text;
   messageDiv.className = `message ${type}`;
@@ -12,7 +11,7 @@ function showMessage(text, type = 'success') {
   }, 3000);
 }
 
-// Fetch and render posts
+
 async function loadPosts() {
   postsContainer.innerHTML = '';
   const res = await fetch('/posts');
@@ -35,7 +34,6 @@ function renderPost(post) {
   postsContainer.appendChild(div);
 }
 
-// Handle form submit
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const title = document.getElementById('title').value.trim();
@@ -59,7 +57,7 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// Handle edit and delete
+
 postsContainer.addEventListener('click', async (e) => {
   const postDiv = e.target.closest('.post');
   const id = postDiv.dataset.id;
@@ -131,5 +129,5 @@ postsContainer.addEventListener('click', async (e) => {
   }
 });
 
-// Load posts on page load
+
 loadPosts();
