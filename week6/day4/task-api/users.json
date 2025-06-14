@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "fullName": "lahcen",
+    "userName": "osdc",
+    "email": "asca",
+    "password": "$2b$10$ViBbAsMxl1JH3xpHuctjCuqsaTNxc0TsF0erReQqws3okqp.4zZBq"
+  },
+  {
+    "id": 2,
+    "fullName": "mohammed",
+    "userName": "osdc",
+    "email": "asca",
+    "password": "$2b$10$d8qJVrIG8cRroj/qKkU7e.IxX53sSuvoEl.gPdoabMyU2HpLRd9ZG"
+  }
+]
